@@ -4,23 +4,11 @@ import React, { Fragment, useState, useEffect, useContext } from 'react'
 import { toast } from 'react-toastify'
 import { LoginContext } from "../LoginContext";
 const Dashboard = (props) => {
-   const DashboardAddress = "/api/dashboard"
    const [userObj, setUserObj] = useContext(LoginContext).value1;
    const [name, setName] = useState("Loading...")
    useEffect(() => {
-      getName()
-   }, []);
-
-   async function getName() {
-      // try {
-      //    const response = await axios.get(DashboardAddress, { withCredentials: true });
-
-      //    setName(response.data);
-      // } catch (error) {
-      //    console.error(error.message);
-      // }
       setName(userObj.user_name);
-   }
+   }, [userObj]);
 
 
    const logout = (e) => {

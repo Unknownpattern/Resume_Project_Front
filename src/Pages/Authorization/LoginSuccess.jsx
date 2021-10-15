@@ -6,7 +6,8 @@ export default function LoginSuccess() {
 
    useEffect(() => {
       setTimeout(setRefresh, 1000, !refresh);
-   }, [])
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, []);
    return (
       <div>
          <h1>Login Success... Redirecting you to dashboard</h1>
